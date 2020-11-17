@@ -545,6 +545,10 @@
         padding: 0;
     }
 
+    .iti-mobile .iti--container {
+        z-index: 999999999  ;
+    }
+
     #header {
         .header-right {
             .header-auth {
@@ -592,6 +596,10 @@
 
         .profile_products {
             .product-row {
+                &.inactive {
+                    display: none;
+                }
+
                 &.title-row {
                     &>* {
                         width: 100%;
@@ -636,10 +644,11 @@
                     transform: translateY(.4rem) rotate(135deg);
                     transition: .25s ease-out;
                 }
+
                 &.closed {
                     &::after {
                         transform: rotate(-45deg);
-                        
+
                     }
                 }
             }
@@ -705,53 +714,69 @@
         width: 100%;
         z-index: 12;
     }
+
     .profile_aside--nav {
         position: static;
+
         .section-title.bb {
             &::after {
                 display: none;
             }
         }
     }
+
     .profile-offers {
         padding-top: 0;
+
         &_item {
             display: block;
             padding: 2rem 0;
             border-bottom: 1px solid rgba($black, .1);
+
             &-name {
-                font-size: 1.2rem;
+                font-size: 1rem;
                 font-weight: 900;
                 padding-bottom: 1rem !important;
+
+                .section-title {
+                    display: none !important;
+                }
             }
+
             &-buy {
                 margin-top: 1rem;
                 padding: 1rem 2rem !important;
                 display: block;
             }
-            & > * {
+
+            &>* {
                 width: 100%;
                 padding: 0.35rem 0;
+
                 .section-title {
                     display: inline-block;
                     padding-right: 1rem;
                 }
             }
         }
+
         &_list-title {
             display: none;
         }
     }
+
     [data-modal="login"] {
         display: block;
         padding-top: 4rem;
         overflow-y: scroll;
+
         .wrap {
             margin: 0 auto;
             margin-bottom: 4rem;
         }
-        
+
     }
+
     .form-login_header [data-header]>* {
         font-size: 1rem;
     }

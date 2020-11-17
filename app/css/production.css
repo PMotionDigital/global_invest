@@ -5003,7 +5003,8 @@ body.page-template-template-about .about, body.page-template-template-author .au
   .profile_products .product-row:hover .button-modal {
     transform: translateX(0); }
   .profile_products .product-row.inactive {
-    opacity: 0.4; }
+    opacity: 0.4;
+    display: none; }
   .profile_products .product-row .unactive {
     text-align: left; }
   .profile_products .product-row.title-row {
@@ -5152,6 +5153,19 @@ body.page-template-template-about .about, body.page-template-template-author .au
     pointer-events: none; }
     [data-profile-loadwrap].load::after, [data-profile-loadwrap].load::before {
       opacity: 1; }
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  #profile .profile_white .button-modal {
+    width: 100%;
+    position: static;
+    transform: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    padding-right: 0;
+    background-color: red;
+    margin: 2rem 0 1rem; }
+  #profile .profile-offers .button-modal {
+    background-color: white; } }
 
 .docs-tabs_header {
   display: flex; }
@@ -5821,6 +5835,8 @@ body.page-template-template-about .about, body.page-template-template-author .au
     grid-template-columns: repeat(6, 6fr); }
   [class*=padding-] {
     padding: 0; }
+  .iti-mobile .iti--container {
+    z-index: 999999999; }
   #header .header-right .header-auth.logout {
     width: 50px;
     min-width: 50px;
@@ -5849,6 +5865,8 @@ body.page-template-template-about .about, body.page-template-template-author .au
       padding-left: 1.88rem; }
     #profile .profile_products .product-row {
       display: block; }
+      #profile .profile_products .product-row.inactive {
+        display: none; }
       #profile .profile_products .product-row.title-row > * {
         width: 100%; }
         #profile .profile_products .product-row.title-row > *:not(:first-child) {
@@ -5922,9 +5940,11 @@ body.page-template-template-about .about, body.page-template-template-author .au
       padding: 2rem 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
       .profile-offers_item-name {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 900;
         padding-bottom: 1rem !important; }
+        .profile-offers_item-name .section-title {
+          display: none !important; }
       .profile-offers_item-buy {
         margin-top: 1rem;
         padding: 1rem 2rem !important;
