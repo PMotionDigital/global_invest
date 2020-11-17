@@ -130,6 +130,19 @@
             .password-control--noview {
                 background: url(../images/eye-open.svg) 0 0 no-repeat;
             }
+
+            .password-reg {
+                position: absolute;
+                top: 1rem;
+                right: 0.5rem;
+                display: inline-block;
+                width: 1.5rem;
+                height: 1.5rem;
+                background: url(../images/eye-closed.svg) 0 0 no-repeat;
+            }
+            .password-reg--noview {
+                background: url(../images/eye-open.svg) 0 0 no-repeat;
+            }
         }
 
 

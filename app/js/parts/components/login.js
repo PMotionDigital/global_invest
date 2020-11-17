@@ -21,7 +21,7 @@ jQuery(document).ready(($) => {
 		}
 		formData['action'] = action;
 
-		const req = form.find('[required]');
+		const req = form.find('[data-required]');
 		const reqArr = [];
 		req.each((i, el) => {
 			if ($(el).val() !== '') {
@@ -30,6 +30,7 @@ jQuery(document).ready(($) => {
 			} else {
 				reqArr.push(false);
 				$(el).addClass('invalid');
+				// $(el).get(0).setCustomValidity('Хуила');
 			}
 		});
 		if (!valid) {
@@ -75,7 +76,16 @@ jQuery(document).ready(($) => {
 				} else {
 					$('[data-modal="login"] .wrap').removeClass('loading');
 					// $('[data-modal="login"]').removeClass('open');
-					noteForm(response.message);
+					// noteForm(response.message);
+
+
+					let inputs = $('.fields');
+					inputs.css('border', '2px solid red');
+					$('.form-message').html(response.message);
+					$('.form-message').css('color', 'red');
+					
+
+
 				}
 			}
 		});
@@ -105,8 +115,8 @@ jQuery(document).ready(($) => {
 		}, 5500);
 	}
 
-	$('body').on('click', '.password-control', function(){
-		if ($('#log-input').attr('type') == 'password'){
+	$('body').on('click', '.password-control', function () {
+		if ($('#log-input').attr('type') == 'password') {
 			$(this).addClass('password-control--noview');
 			$('#log-input').attr('type', 'text');
 		} else {
@@ -115,13 +125,13 @@ jQuery(document).ready(($) => {
 		}
 		return false;
 	});
-	$('body').on('click', '.password-control', function(){
-		if ($('#reg-input').attr('type') == 'password'){
-			$(this).addClass('password-control--noview');
+	$('body').on('click', '.password-reg', function () {
+		if ($('#reg-input').attr('type') == 'password') {
+			$(this).addClass('password-reg--noview');
 			$('#reg-input').attr('type', 'text');
 		} else {
-			$(this).removeClass('password-control--noview');
-X			$('#reg-input').attr('type', 'password');
+			$(this).removeClass('password-reg--noview');
+			$('#reg-input').attr('type', 'password');
 		}
 		return false;
 	});
