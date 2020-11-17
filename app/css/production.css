@@ -4785,6 +4785,11 @@ body.page-template-template-about .about, body.page-template-template-author .au
   width: 100%;
   background-color: #e10404;
   color: #fff; }
+  [data-modal="buy-case"] [type="submit"].disabled,
+  [data-modal="realize"] [type="submit"].disabled {
+    pointer-events: none;
+    cursor: none;
+    background-color: gray; }
 
 .profile-history_row {
   display: flex; }
