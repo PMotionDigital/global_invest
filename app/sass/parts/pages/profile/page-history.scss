@@ -1,0 +1,29 @@
+@import '../../vars';
+.profile-history {
+	&_row {
+		&:not(.title-row) {
+			padding: 1.37rem 0 .63rem 0;
+			border-bottom: 2px solid #D9DDE5;
+			font-size: 0.75rem;
+		}
+		&.title-row {
+			padding: 0.63rem 0;
+		}
+		display: flex;
+		&-item {
+			width: 21.25%;
+			&:last-child {
+				width: 15%;
+			}
+			&.success {
+				color: $green;
+			}
+			&.failed {
+				color: $red;
+			}
+			&.exp {
+				color: $grey;
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+@import '../parts/vars';
+
+.header-mobile-top {
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    .actual-items {
+        grid-template-columns: repeat(2,3fr)!important;
+    }
+    .author {
+        padding-top: 100px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .header-mobile-top {
+        justify-content: space-between;
+    }
+    .author {
+        padding-top: 100px;
+    }
+
+}

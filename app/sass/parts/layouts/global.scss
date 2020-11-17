@@ -1,0 +1,145 @@
+@import '../_vars';
+
+* {
+    border: 0;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+//scroll 
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-width: 1px 1px 1px 2px;
+    border-color: #fafafa;
+    background-color: #444;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-width: 1px 1px 1px 2px;
+    border-color: #fafafa;
+    background-color: #373A3C;
+}
+
+::-webkit-scrollbar-track {
+    border-width: 0;
+}
+
+::-moz-scrollbar {
+    width: 6px;
+}
+
+::-moz-scrollbar-thumb {
+    border-width: 1px 1px 1px 2px;
+    border-color: #fafafa;
+    background-color: #373A3C;
+}
+
+::-moz-scrollbar-thumb:hover {
+    border-width: 1px 1px 1px 2px;
+    border-color: #fafafa;
+    background-color: #666;
+}
+
+::-moz-scrollbar-track {
+    border-width: 0;
+}
+
+[class*="textWrap-"] {
+    display: none !important;
+}
+
+// buttons
+
+.wpcf7-response-output {
+    display: none !important;
+}
+
+#note_form {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    left: 2rem;
+    bottom: 2rem;
+    width: 45%;
+    background-color: $red;
+    padding: 3rem;
+    color: $white;
+    z-index: 999;
+    font-size: 1rem;
+    //border: 1px solid $black;
+    transform: translate3d(0, 1rem, 0);
+    transition: all .3s ease-in-out;
+    border-radius: 4px;
+    backdrop-filter: blur(3px);
+
+    .note_form-text {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .note_form-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        & > div:first-child a {
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+        .footer-socials {
+            margin-top: 1rem;
+            nav.socials ul a {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+[type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    #note_form {
+        width: calc(100% - 4rem);
+        max-width: 100%;
+        padding: 2rem;
+        .note_form-text {
+            font-size: 1.2rem;
+            line-height: normal;
+        }
+        .note_form-content {
+            line-height: normal;
+            [class*="col-"] {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    body {
+        padding-top: 4.5rem !important;
+    }
+}

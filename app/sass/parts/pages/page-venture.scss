@@ -1,0 +1,34 @@
+@import '../_vars';
+
+body.page-template-template-venture {
+    .venture {
+        background-size: cover;
+    }
+    .actual-item {
+        .stadia {
+            position: relative;
+            .line {
+                position: absolute;
+                height: 2px;
+                background-color: $grey-light;
+                width: 100%;
+                right: 0;
+                top: 8px;
+                transform: translateX(100%);
+                .subline {
+                    position: absolute;
+                    left: 0;
+                    height: 100%;
+                    top: 0;
+                    background-color: $red;
+                }
+            }
+        }
+        .location {
+            position: relative;
+            padding-left: 1.2rem;
+            background: url(../images/icons/location.svg) left center no-repeat;
+            background-size: 1rem;
+        }
+    }
+}

@@ -1,0 +1,145 @@
+@import '../parts/vars';
+
+@media screen and (max-width: 1280px) {
+    .home {
+        padding-top: 70px;
+    }
+
+    #offers {
+        .offers-items {
+            .offers-item.item-count-4 {
+                .offers-item__info {
+                    padding-top: 2rem;
+                }
+            }
+
+            .offers-item.item-count-3 {
+                .offers-item__info {
+                    padding-top: 2rem;
+                }
+            }
+        }
+    }
+
+    .offers-item:nth-child(2n) {
+        .offers-item__info {
+            padding-right: 10px;
+            padding-left: 110px;
+        }
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .home {
+        padding-top: 70px;
+    }
+
+    .button span {
+        font-size: 10px;
+    }
+
+    #home {
+        h1 {
+            font-size: 4vw;
+        }
+    }
+
+    #offers {
+        .offers-item:nth-child(2n) {
+            .offers-item__info {
+                padding-right: 35px;
+                padding-left: 140px;
+            }
+        }
+
+        h4 {
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 10px;
+        }
+    }
+
+    #changes {
+        .changes-top {
+            .changes-top__slides {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+
+    .deposit-link {
+        left: 4rem;
+    }
+
+    #contacts {
+        .footer-nav {
+            padding: 0 1rem;
+        }
+
+        .footer-socials {
+            ul {
+                grid-template-columns: repeat(3, 3fr);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .home {
+        padding-top: 70px;  
+    }
+
+    .button span {
+        font-size: 10px;
+    }
+
+    #home {
+        h1 {
+            font-size: 6vw;
+        }
+    }
+
+    #offers {
+        .offers-item:nth-child(2n) {
+            .offers-item__info {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+        }
+
+        h4 {
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 10px;
+        }
+    }
+
+    #changes {
+        .changes-top {
+            .changes-top__slides {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+
+    .deposit-link {
+        left: 4rem;
+    }
+
+    #contacts {
+        .footer-nav {
+            padding: 0 1rem;
+        }
+
+        .footer-socials {
+            ul {
+                grid-template-columns: repeat(3, 3fr);
+            }
+        }
+    }
+}

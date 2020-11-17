@@ -1,0 +1,64 @@
+@import '../_vars';
+
+.actual {
+    padding-bottom: 75px;
+}
+
+.evaluation-item,
+.plan-item__design {
+    align-items: flex-start;
+}
+
+body.page-template-template-otcipo {
+    .tabs {
+        color: $black;
+        margin-bottom: 4rem;
+        .tabs-nav {
+            margin-bottom: 3rem;
+        }
+    }
+    .actual {
+        padding-bottom: 75px;
+        .title {
+            margin-bottom: 2rem;
+        }
+        .subtitle {
+            color: $grey;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+    }
+    .actual-items {
+        display: grid;
+        grid-template-columns: repeat(5,5fr);
+        grid-gap: 1rem;
+        .actual-item {
+            width: auto;
+            margin: 0;
+            margin-bottom: 1rem;
+            
+            .actual-item__span {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.actual-items {
+    display: grid;
+    grid-template-columns: repeat(5,5fr);
+    grid-gap: 1rem;
+    .actual-item {
+        width: auto;
+        margin: 0;
+        &__link {
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+        }
+        .actual-item__icon img {
+            max-width: inherit;
+        }
+    }
+}
+

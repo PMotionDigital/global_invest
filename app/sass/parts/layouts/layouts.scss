@@ -1,0 +1,124 @@
+@import'../vars';
+
+input {
+    border-radius: 0px;
+}
+
+.button_new {
+    padding: 1rem;
+    background-color: $red;
+    color: $white !important;
+    display: inline-block;
+    box-shadow: 0px 10px 30px rgba(225,4,4,0.4);
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: all .25s ease-in-out;
+    position: relative;
+    &:hover {
+        color: $white !important;
+        padding-right: 3rem;
+        &:after {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 1.4rem;
+        right: 1rem;
+        opacity: 0;
+        transform: translateX(1rem);
+        background: url(../../static/img/assets/button/arr.svg) no-repeat 50%/contain;
+        top: 0;
+        transition: all .25s ease-in-out;
+    }
+}
+
+nav.socials {
+    a {
+        position: relative;
+    }
+    img {
+        object-fit: contain;
+        object-position: center;
+        position: absolute;
+        top: auto;
+        left: auto;
+        width: 45%;
+        height: 45%;
+    }
+}
+
+.actual-items {
+    grid-template-columns: repeat(3,3fr) !important;
+    grid-gap: 3rem !important;
+    .actual-item {
+        padding-bottom: 5rem;
+        transform-style: preserve-3d;
+        &:hover .actual-item__icon {
+            transform: translateZ(1.5rem);
+            box-shadow: 2px 10px 17px rgba(0,0,0,.25);
+        }
+    }
+    .actual-item__list {
+        border-bottom: none;
+    }
+    .actual-item__icon {
+        
+        background-color: $white;
+        overflow: hidden;
+        right: 20px;
+        top: -20px;
+        background: none;
+        border-radius: 10px;
+        box-shadow: 2px 2px 7px rgba($black, .15);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        
+        img {
+            position: absolute;
+            margin: auto;
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+        }
+    }
+    .actual-item__link {
+        border-top: 1px solid #e8e8e8;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        padding: 0;
+        
+        transition: all .25s ease-in-out;
+        &:hover {
+            background-color: $red;
+            a {
+                color: $white;
+            }
+        }
+        a {
+            padding: 1.5rem 0;
+            display: block;
+            transition: all .25s ease-in-out;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .actual-items {
+        grid-template-columns: repeat(1,1fr) !important;
+        grid-gap: 3rem !important;
+    }
+    .actual-item {
+        background: #fafafa;
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px rgba($black, .15);
+    }
+}
+
+// fixed

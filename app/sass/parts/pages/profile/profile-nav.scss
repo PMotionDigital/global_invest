@@ -1,0 +1,28 @@
+@import '../../vars';
+
+.user-nav {
+	li {
+		padding-top: 1.25rem;
+		&.active {
+			a {
+				color: $black;
+				font-weight: 600;
+			}
+		}
+	}
+	&--sub {
+		//pointer-events: none;
+		//opacity: 0;
+		//position: absolute;
+		//display: none;
+		//height: 0px;
+		&.opened {
+			display: block;
+			pointer-events: auto;
+		}
+		li {
+			text-transform: none;
+			padding-left: 1rem;
+		}
+	}
+}

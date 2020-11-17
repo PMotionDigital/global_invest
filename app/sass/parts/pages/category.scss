@@ -1,0 +1,8 @@
+@import '../_vars';
+
+.global-tags {
+    margin-bottom: 2rem;
+    .current-menu-item a {
+        border-color: $red;
+    }
+}

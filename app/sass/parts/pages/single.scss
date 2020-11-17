@@ -1,0 +1,12 @@
+
+@import '../_vars';
+
+#breadcrumbs {
+    a {
+        transition: all .25s ease-in-out;
+    }
+    .breadcrumb_last,
+    a:hover {
+        color: $red;
+    }
+}

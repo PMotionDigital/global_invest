@@ -1,0 +1,38 @@
+@import '../parts/_vars';
+
+.tabs {
+    .tabs-nav {
+        display: flex;
+        margin-bottom: 2rem;
+        .tabs-nav__item {
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+            border-radius: 40px;
+            transition: all .25s ease-in-out;
+            cursor: pointer;
+            padding: 1rem 2rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: $red;
+            border: 2px solid $red;
+            &.is-active,
+            &:hover {
+                background-color: $red;
+                color: $white;
+                box-shadow: 3px 3px 10px rgba($red, .75);
+            }
+            .title {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .tabs__content {
+        .tab {
+            display: none;
+            &.is-active {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+
+.tabs {
+    .actual-items {
+        grid-template-columns: repeat(3,3fr)!important;
+    }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .otc {
+        padding-top: 100px;
+    }
+
+    .tabs {
+        .actual-items {
+            grid-template-columns: repeat(1,1fr)!important;
+        }
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .tabs {
+        .actual-items {
+            grid-template-columns: repeat(2,2fr)!important;
+        }
+    }
+}
