@@ -61,6 +61,10 @@ html {
     border-width: 0;
 }
 
+.dis-none {
+    display: none !important;
+}
+
 [class*="textWrap-"] {
     display: none !important;
 }
@@ -98,13 +102,16 @@ html {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        & > div:first-child a {
+
+        &>div:first-child a {
             display: block;
             font-size: 1.5rem;
             margin-top: 1rem;
         }
+
         .footer-socials {
             margin-top: 1rem;
+
             nav.socials ul a {
                 width: 50px;
                 height: 50px;
@@ -123,22 +130,27 @@ html {
     -webkit-appearance: none;
     appearance: none;
 }
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
     #note_form {
         width: calc(100% - 4rem);
         max-width: 100%;
         padding: 2rem;
+
         .note_form-text {
             font-size: 1.2rem;
             line-height: normal;
         }
+
         .note_form-content {
             line-height: normal;
+
             [class*="col-"] {
                 margin-bottom: 1.5rem;
             }
         }
     }
+
     body {
         padding-top: 4.5rem !important;
     }

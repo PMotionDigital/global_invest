@@ -546,7 +546,7 @@
     }
 
     .iti-mobile .iti--container {
-        z-index: 999999999  ;
+        z-index: 999999999;
     }
 
     #header {
@@ -597,7 +597,7 @@
         .profile_products {
             .product-row {
                 &.inactive {
-                    display: none;
+                    //display: none;
                 }
 
                 &.title-row {

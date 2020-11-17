@@ -309,13 +309,14 @@ if (is_user_logged_in()) :
 							<?php while (have_rows('produkty', $user)) : the_row();
 								$status = get_sub_field('status');
 								$product = get_sub_field('produkt');
-								if ($product) : ?>
+								$sum = get_sub_field('summa_investiczij');
+								if ($product && $sum) : ?>
 									<div class="product-row <?php if ($status !== 'true') {
 																echo 'inactive';
 															}; ?>">
 										<?php
 
-										$sum = get_sub_field('summa_investiczij');
+
 										$post_type = get_post_type_object($product->post_type)->labels->singular_name;
 										$waiting = get_field('ozhidaet_publikacziyu', $product->ID);
 										?>
@@ -327,7 +328,8 @@ if (is_user_logged_in()) :
 											<?php if (wp_is_mobile()) {
 												echo '<span class="section-title type-3"><span>сумма инвестиций: </span></span>';
 											}; ?>
-											<?php echo number_format($sum, 2, ',', ' ') . ' $';  ?>
+											<?php
+											echo number_format($sum, 2, ',', ' ') . ' $';  ?>
 										</div>
 
 										<?php
