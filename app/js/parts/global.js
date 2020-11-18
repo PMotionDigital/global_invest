@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
 
     const inputTel = $('input[type="tel"]');
     const checkbox = $('input[type="checkbox"]');
@@ -8,14 +8,14 @@ jQuery(document).ready(function($) {
 
     // init
 
-    formSubmit.on('click', function() {
+    formSubmit.on('click', function () {
         $(this).addClass('loading');
     });
 
     //$('select').styler();
 
     if (wpcf7Elm) {
-        wpcf7Elm.addEventListener('wpcf7submit', function(event) {
+        wpcf7Elm.addEventListener('wpcf7submit', function (event) {
             formSubmit.removeClass('loading');
         }, false);
     }
@@ -26,13 +26,13 @@ jQuery(document).ready(function($) {
     if (localStorage.getItem('cookie-message') == 'showed') {
 
     } else if (localStorage.getItem('cookie-message') == null) {
-        setTimeout(function() {
+        setTimeout(function () {
             $('#cookie-message').addClass('show');
         }, 1500);
         localStorage.setItem('cookie-message', 'showed');
     }
 
-    $('#cookie-message .button').click(function() {
+    $('#cookie-message .button').click(function () {
         $('#cookie-message').removeClass('show');
     });
 
@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
         $(input).mask('(999) 999-9999');
         $(secondInput).mask('(999) 999-9999');
 
-        input.addEventListener("countrychange", function() {
+        input.addEventListener("countrychange", function () {
             var curFormat = $(this).attr('placeholder');
             var doneFormat = curFormat.replace(/[0-9]/g, "9");
             $(this).unmask();
@@ -70,7 +70,7 @@ jQuery(document).ready(function($) {
             $(this).focus();
         });
 
-        secondInput.addEventListener("countrychange", function() {
+        secondInput.addEventListener("countrychange", function () {
             var curFormat = $(this).attr('placeholder');
             var doneFormat = curFormat.replace(/[0-9]/g, "9");
             $(this).unmask();
@@ -123,22 +123,40 @@ jQuery(document).ready(function($) {
     // });
 
 
-    var options = {
-        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@16.0.3/build/js/utils.js",
-        autoPlaceholder: "aggressive"
+    // var options = {
+    //     utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@16.0.3/build/js/utils.js",
+    //     autoPlaceholder: "aggressive"
+    // };
+    // var input = document.querySelector('.form-login [type="tel"]');
+    // var iti = window.intlTelInput(input, options);
+    // iti.setCountry('ru')
+    // $(input).mask('(999) 999-9999');
+    // input.addEventListener("countrychange", function () {
+    //     var curFormat = $(this).attr('placeholder');
+    //     var doneFormat = curFormat.replace(/[0-9]/g, "9");
+    //     $(this).unmask();
+    //     $(this).mask(`${doneFormat}`);
+    //     $(this).focus();
+    // });
+
+    const telInit = () => {
+        var options = {
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@16.0.3/build/js/utils.js",
+            autoPlaceholder: "aggressive"
+        };
+        var input = document.querySelector('.form-login [type="tel"]');
+        var iti = window.intlTelInput(input, options);
+        iti.setCountry('ru')
+        $(input).mask('(999) 999-9999');
+        input.addEventListener("countrychange", function () {
+            var curFormat = $(this).attr('placeholder');
+            var doneFormat = curFormat.replace(/[0-9]/g, "9");
+            $(this).unmask();
+            $(this).mask(`${doneFormat}`);
+            $(this).focus();
+        });
     };
-    var input = document.querySelector('.form-login [type="tel"]');
-    var iti = window.intlTelInput(input, options);
-    iti.setCountry('ru')
-    $(input).mask('(999) 999-9999');
-    input.addEventListener("countrychange", function() {
-        var curFormat = $(this).attr('placeholder');
-        var doneFormat = curFormat.replace(/[0-9]/g, "9");
-        $(this).unmask();
-        $(this).mask(`${doneFormat}`);
-        $(this).focus();
-    });
-
-
+    telInit();
+    window.tel_init = telInit;
 
 });

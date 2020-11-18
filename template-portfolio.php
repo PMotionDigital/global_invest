@@ -58,7 +58,9 @@ $mainWrapper = 'col-lg-8 col-md-10 col-lm-11 col-xs-11';
 							<?php 
 							if(current_user_can('subscriber')): ?>
 								<div class="actual-item__link profile-offers_item-buy">
-									<a href="#" class="button-modal" data-modal="buy-case">инвестировать</a>
+									<a href="#" class="button-modal" 
+									data-min="10000"
+									data-modal="buy-case">инвестировать</a>
 								</div>
 								<?php else: ?>
 								<div class="actual-item__link">

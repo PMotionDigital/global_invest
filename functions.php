@@ -16,7 +16,7 @@ add_filter('excerpt_length', function () {
 	return 20;
 });
 
-add_theme_support( 'menus' );
+add_theme_support('menus');
 
 add_action('wp_enqueue_scripts', 'remove_some_stylesheet', 20);
 
@@ -68,27 +68,32 @@ function wpuf_allow_x_rar($t, $user)
 }
 
 add_action('after_setup_theme', 'theme_register_nav_menu');
-function theme_register_nav_menu(){
+function theme_register_nav_menu()
+{
 	register_nav_menu('primary', 'Главное меню');
 }
 
 add_action('after_setup_theme', 'theme_register_profile_menu');
-function theme_register_profile_menu(){
+function theme_register_profile_menu()
+{
 	register_nav_menu('profile', 'Меню профиль');
 }
 
 add_action('after_setup_theme', 'theme_register_footer_menu');
-function theme_register_footer_menu(){
+function theme_register_footer_menu()
+{
 	register_nav_menu('footer', 'Меню в футере');
 }
 
 add_action('after_setup_theme', 'theme_register_category_menu');
-function theme_register_category_menu(){
+function theme_register_category_menu()
+{
 	register_nav_menu('category', 'Меню в категориях');
 }
 
 add_action('after_setup_theme', 'theme_register_mobile_menu');
-function theme_register_mobile_menu(){
+function theme_register_mobile_menu()
+{
 	register_nav_menu('mobile', 'Меню мобильное');
 }
 
@@ -125,7 +130,6 @@ if (function_exists('acf_add_options_page')) {
 		'capability'  => 'edit_posts',
 		'redirect'    => false
 	));
-
 }
 
 // wp nav custom
@@ -144,40 +148,41 @@ if (function_exists('acf_add_options_page')) {
 
 // on send ok
 
-add_action( 'wp_footer', 'mycustom_wp_footer' );
- 
-function mycustom_wp_footer() {
+add_action('wp_footer', 'mycustom_wp_footer');
+
+function mycustom_wp_footer()
+{
 ?>
 	<script type="text/javascript">
-        function noteForm () {
-            setTimeout(function(){
-                jQuery('#note_form .note_form-text').text(jQuery('.wpcf7-response-output').text());
-                jQuery('#note_form').addClass('show');
-            }, 500);   
+		function noteForm() {
+			setTimeout(function() {
+				jQuery('#note_form .note_form-text').text(jQuery('.wpcf7-response-output').text());
+				jQuery('#note_form').addClass('show');
+			}, 500);
 
-            setTimeout(function(){
-                jQuery('#note_form').removeClass('show');
-                
-            }, 5500); 
-        }
-        document.addEventListener('wpcf7mailsent', function(event) {
+			setTimeout(function() {
+				jQuery('#note_form').removeClass('show');
+
+			}, 5500);
+		}
+		document.addEventListener('wpcf7mailsent', function(event) {
 			noteForm();
-        }, false);
-        document.addEventListener('wpcf7invalid', function(event) {
-            noteForm();
-        }, false);
-        document.addEventListener('wpcf7spam', function(event) {
-            noteForm();
-        }, false);
-        document.addEventListener('wpcf7mailfailed', function(event) {
-            noteForm();
-        }, false);
-        document.addEventListener('wpcf7submit', function(event) {
+		}, false);
+		document.addEventListener('wpcf7invalid', function(event) {
 			noteForm();
-			
-        }, false);
-    </script>
-    <?php
+		}, false);
+		document.addEventListener('wpcf7spam', function(event) {
+			noteForm();
+		}, false);
+		document.addEventListener('wpcf7mailfailed', function(event) {
+			noteForm();
+		}, false);
+		document.addEventListener('wpcf7submit', function(event) {
+			noteForm();
+
+		}, false);
+	</script>
+<?php
 }
 
 // add_filter('pll_get_post_types', 'fixwp_add_acf_pll', 10, 2);
@@ -187,12 +192,13 @@ function mycustom_wp_footer() {
 // }
 
 
-add_filter( 'auth_cookie_expiration',  'cookie_expiration_new', 20, 3 );
-function cookie_expiration_new ( $expiration, $user_id, $remember ) {
+add_filter('auth_cookie_expiration',  'cookie_expiration_new', 20, 3);
+function cookie_expiration_new($expiration, $user_id, $remember)
+{
 	// Время жизни cookies для администратора
-	if ( $remember && user_can( $user_id, 'manage_options' ) ) {
+	if ($remember && user_can($user_id, 'manage_options')) {
 		// Если установлена галочка
-		if ( $remember == true ) {
+		if ($remember == true) {
 			return 20 * DAY_IN_SECONDS;
 		}
 		// Если не установлена
@@ -200,7 +206,7 @@ function cookie_expiration_new ( $expiration, $user_id, $remember ) {
 	}
 	// Для всех остальных пользователей
 	// Если установлена галочка
-	if ( $remember == true ) {
+	if ($remember == true) {
 		return DAY_IN_SECONDS / 24;
 	}
 	// Если не установлена
@@ -212,6 +218,7 @@ include 'func/func-login.php';
 include 'func/func-profile-page.php';
 include 'func/func-upload.php';
 include 'func/func-profile-payments.php';
+include 'func/func-profile-edit.php';
 
 
 // автообновление версии файлов

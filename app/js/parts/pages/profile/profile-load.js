@@ -1,7 +1,6 @@
 jQuery(document).ready(($) => {
 	// setup page 
-	const pages = [
-		{
+	const pages = [{
 			name: 'history',
 			templates: ['profile-menu', 'profile-history']
 		},
@@ -20,39 +19,44 @@ jQuery(document).ready(($) => {
 		{
 			name: 'top-up',
 			templates: ['profile-menu', 'profile-top-up']
+		},
+		{
+			name: 'profile-edit',
+			templates: ['profile-menu', 'profile-edit']
 		}
 	];
 
-	
+
 	const loadContainer = $('[data-profile-loadwrap]');
 	const setupPage = (templates = [], page = '') => {
 		$.ajax({
 			url: `${window.location.origin}/wp-admin/admin-ajax.php`,
-            method: 'GET',
-            cache: false,
-            data: {
-                action: 'setup_profile_page',
-                templates: templates
-            },
-            beforeSend: () => {
-            	loadContainer.addClass('load');
-            },
-           	success: (data) => {
-            	const response = JSON.parse(data);
-            	console.log(response);
-            	loadContainer.find('.changable').remove();
-            	
-            	for(temp in response.templates){
-            		if(temp != 'profile-menu') {
-	            		loadContainer.append(response.templates[temp]);
-	            	}
-            	};
+			method: 'GET',
+			cache: false,
+			data: {
+				action: 'setup_profile_page',
+				templates: templates
+			},
+			beforeSend: () => {
+				loadContainer.addClass('load');
+			},
+			success: (data) => {
+				const response = JSON.parse(data);
+				console.log(response);
+				loadContainer.find('.changable').remove();
 
-            	$(`[data-link="${page}"]`).addClass('current').siblings().removeClass('current');
-            	setTimeout(()=> {
-            		loadContainer.removeClass('load');
-            	}, 100);
-            }
+				for (temp in response.templates) {
+					if (temp != 'profile-menu') {
+						loadContainer.append(response.templates[temp]);
+					}
+				};
+				window.tel_init();
+				$(`[data-link="${page}"]`).addClass('current').siblings().removeClass('current');
+				setTimeout(() => {
+					loadContainer.removeClass('load');
+
+				}, 100);
+			}
 		});
 	}
 	window.loadProfilePage = (page) => {

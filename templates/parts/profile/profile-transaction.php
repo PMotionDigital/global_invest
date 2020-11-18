@@ -21,7 +21,7 @@ $user = wp_get_current_user();  ?>
 			if(localStorage.getItem('free_money') <= 0) {
 				jQuery('.profile-form').html(`
 					<div class="section-title type-2">
-						<h3>Вывод средств недоступен</h3>
+						<h3>Нет свободных средств</h3>
 					</div>
 
 				`);

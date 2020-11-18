@@ -54,6 +54,12 @@ if (is_user_logged_in()) :
 								</div>
 								<span class="title-tooltip">Поддержка</span>
 							</a>
+							<a href="#" data-link="profile-edit" class="profile_top-nav-item">
+								<div class="image">
+									<img src="<?php bloginfo('template_url'); ?>/dist/images/icons/settings.svg" alt="">
+								</div>
+								<span class="title-tooltip">Изменить данные</span>
+							</a>
 						</div>
 						<div class="profile_aside profile_white col-lg-12">
 							<div class="<?php if (wp_is_mobile()) {
@@ -240,11 +246,11 @@ if (is_user_logged_in()) :
 
 							<div class="chart-tabs tabs">
 								<div class="chart-tabs_header">
-									<div class="section-title type-2 active" data-tab="2">
-										<h2>Доходность</h2>
-									</div>
-									<div class="section-title type-2" data-tab="1">
+									<div class="section-title type-2 active" data-tab="1">
 										<h2>Размещение портфеля</h2>
+									</div>
+									<div class="section-title type-2" data-tab="2">
+										<h2>Доходность</h2>
 									</div>
 								</div>
 								<div class="chart-tabs_content">

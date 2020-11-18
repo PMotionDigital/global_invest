@@ -26,7 +26,7 @@ function api_send() {
       $result = getResult($STOCK_URLS);
   
       for($i = 0; $i < $STOCK_COUNT; $i++) {
-          update_sub_field( array('spisok_kompanij', $i+1, 'test'), strval($result[$i]), 'option' );
+          update_sub_field( array('spisok_kompanij', $i+1, 'json'), strval($result[$i]), 'option' );
       }
     endif;
   }

@@ -71,7 +71,7 @@ jQuery(document).ready(($) => {
         submit.addClass('disabled');
         const postId = Number($(e.currentTarget).closest('[data-post-id]').data('post-id'));
         const postName = $(e.currentTarget).closest('[data-post-id]').find('.profile-offers_item-name').text().trim();
-        const min = $(e.currentTarget).data('min') || 0;
+        const min = $(e.currentTarget).data('min') || $(e.currentTarget).find('[data-min]').data('min') || 0;
         $('[data-modal="buy-case"] [name="your-payment"]').attr('min', min);
         // $('[data-modal="buy-case"] [name="your-payment"]').val(min);
         $('[data-modal="buy-case"] [name="your-payment"]').attr('placeholder', `От ${min.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ").replace('.',',')} $`);
