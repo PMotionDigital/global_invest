@@ -18,7 +18,7 @@ jQuery(document).ready(function ($) {
         formData.append('action', 'update_user_profile')
 
 
-
+        const loadContainer = $('[data-profile-loadwrap]');
         $.ajax({
             type: 'POST',
             url: document.location.origin + '/wp-admin/admin-ajax.php',
@@ -26,13 +26,13 @@ jQuery(document).ready(function ($) {
             processData: false,
             data: formData,
             beforeSend: () => {
-                //
+                loadContainer.addClass('load');
             },
             success: (response) => {
                 let jsonOutput = JSON.parse(response);
                 let userFirstName = jsonOutput.name;
                 let outputError = jsonOutput.error;
-
+                loadContainer.removeClass('load');
                 //console.log(outputError);
 
                 const noteFormText = profileForm.find('.form-message');
