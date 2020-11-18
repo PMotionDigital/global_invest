@@ -1,10 +1,11 @@
 @import '../../vars';
 
 .form-login {
-    .form-message {
+    .form-message:not(:empty) {
         color: red;
-        padding: 2rem 0;
+        padding: 1rem 0 .5rem;
     }
+
     .submit_settings {
         &.disabled {
             background-color: grey;
@@ -13,8 +14,10 @@
             cursor: none;
         }
     }
+
     .password-edit {
         position: relative;
+
         .password-edit--open {
             position: absolute;
             top: 1rem;
@@ -24,11 +27,12 @@
             height: 1.5rem;
             background: url(../images/eye-closed.svg) 0 0 no-repeat;
         }
+
         .password-edit--close {
             background: url(../images/eye-open.svg) 0 0 no-repeat;
         }
     }
-    
+
 }
 
 

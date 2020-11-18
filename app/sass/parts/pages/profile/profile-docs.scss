@@ -219,10 +219,23 @@
     }
 
     &_list {
+        &-download {
+            display: inline-block;
+            padding-left: 1rem;
+            color: $grey;
+        }
+
         &-item {
             padding: 1.25rem 0;
             display: flex;
             justify-content: space-between;
+
+            &:hover {
+                .reports_list-download {
+                    color: $blue;
+                    text-decoration: underline;
+                }
+            }
         }
 
         &-header {
@@ -241,6 +254,7 @@
         }
     }
 }
+
 .inputfile {
     width: 0.1px;
     height: 0.1px;
@@ -249,7 +263,8 @@
     position: absolute;
     z-index: -1;
 }
-.inputfile + label {
+
+.inputfile+label {
     margin-bottom: 1rem;
     width: 100%;
     font-size: 1.25rem;
@@ -259,10 +274,13 @@
     display: inline-block;
     padding: 2rem;
 }
-.inputfile:focus + label,
-.inputfile + label:hover {
+
+.inputfile:focus+label,
+.inputfile+label:hover {
     background-color: red;
 }
-.inputfile + label {
-    cursor: pointer; /* "hand" cursor */
+
+.inputfile+label {
+    cursor: pointer;
+    /* "hand" cursor */
 }

@@ -7,9 +7,9 @@
             <h2>Регистрация</h2>
         </div>
     </div>
-    <div class="form-message"></div>
     <div class="form-login_content">
         <div class="active" data-content="login">
+            <div class="form-message"></div>
             <form data-id="login" class="ajax-auth">
                 <?php wp_nonce_field('ajax-login-nonce', 'security'); ?>
 
@@ -55,7 +55,9 @@
                         <button class="password-reg"></button>
                     </div>
                 </div>
-
+                <div class="form-row--checkbox">
+                    <input type="checkobox" name="accept">
+                </div>
                 <input class="submit_button button type-1" type="submit" value="Регистрация">
             </form>
         </div>

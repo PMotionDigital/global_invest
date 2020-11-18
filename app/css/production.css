@@ -5329,10 +5329,18 @@ body.page-template-template-about .about, body.page-template-template-author .au
       .reports_header-tabs-item:not(.active) {
         opacity: 0.5; }
 
+.reports_list-download {
+  display: inline-block;
+  padding-left: 1rem;
+  color: #a0a4ae; }
+
 .reports_list-item {
   padding: 1.25rem 0;
   display: flex;
   justify-content: space-between; }
+  .reports_list-item:hover .reports_list-download {
+    color: #0653A9;
+    text-decoration: underline; }
 
 .reports_list-header {
   display: flex;
@@ -5369,9 +5377,9 @@ body.page-template-template-about .about, body.page-template-template-author .au
   cursor: pointer;
   /* "hand" cursor */ }
 
-.form-login .form-message {
+.form-login .form-message:not(:empty) {
   color: red;
-  padding: 2rem 0; }
+  padding: 1rem 0 .5rem; }
 
 .form-login .submit_settings.disabled {
   background-color: grey;
