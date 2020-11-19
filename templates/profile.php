@@ -399,7 +399,7 @@ if (is_user_logged_in()) :
 																																					elseif ($status == 'wait') :
 																																						echo '<span class="unactive">Ожидание реализации</span>';
 																																					elseif ($status == 'success') :
-																																						echo '<span class="unactive">Реализовано</span>';
+																																						echo '<span class="dis-none">Реализовано</span>';
 																																					endif; ?>
 									</div>
 							<?php
