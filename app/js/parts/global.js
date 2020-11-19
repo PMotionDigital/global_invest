@@ -46,37 +46,38 @@ jQuery(document).ready(function ($) {
     if (timeBlock) {
 
 
-        var options = {
-            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@16.0.3/build/js/utils.js",
-            autoPlaceholder: "aggressive"
-        }
 
-        var secondInput = timeBlock.querySelector('.wpcf7-tel');
-        var input = document.querySelector(".wpcf7-tel");
-        var iti = window.intlTelInput(input, options);
-        var secondIti = window.intlTelInput(secondInput, options);
+        // var options = {
+        //     utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@16.0.3/build/js/utils.js",
+        //     autoPlaceholder: "aggressive"
+        // }
+
+        // var secondInput = timeBlock.querySelector('.wpcf7-tel');
+        // var input = document.querySelector(".wpcf7-tel");
+        // var iti = window.intlTelInput(input, options);
+        // var secondIti = window.intlTelInput(secondInput, options);
 
 
-        iti.setCountry('ru')
-        secondIti.setCountry('ru')
-        $(input).mask('(999) 999-9999');
-        $(secondInput).mask('(999) 999-9999');
+        // iti.setCountry('ru')
+        // secondIti.setCountry('ru')
+        // $(input).mask('(999) 999-9999');
+        // $(secondInput).mask('(999) 999-9999');
 
-        input.addEventListener("countrychange", function () {
-            var curFormat = $(this).attr('placeholder');
-            var doneFormat = curFormat.replace(/[0-9]/g, "9");
-            $(this).unmask();
-            $(this).mask(`${doneFormat}`);
-            $(this).focus();
-        });
+        // input.addEventListener("countrychange", function () {
+        //     var curFormat = $(this).attr('placeholder');
+        //     var doneFormat = curFormat.replace(/[0-9]/g, "9");
+        //     $(this).unmask();
+        //     $(this).mask(`${doneFormat}`);
+        //     $(this).focus();
+        // });
 
-        secondInput.addEventListener("countrychange", function () {
-            var curFormat = $(this).attr('placeholder');
-            var doneFormat = curFormat.replace(/[0-9]/g, "9");
-            $(this).unmask();
-            $(this).mask(`${doneFormat}`);
-            $(this).focus();
-        });
+        // secondInput.addEventListener("countrychange", function () {
+        //     var curFormat = $(this).attr('placeholder');
+        //     var doneFormat = curFormat.replace(/[0-9]/g, "9");
+        //     $(this).unmask();
+        //     $(this).mask(`${doneFormat}`);
+        //     $(this).focus();
+        // });
     }
 
     // .stocks-items
@@ -144,17 +145,26 @@ jQuery(document).ready(function ($) {
             utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@16.0.3/build/js/utils.js",
             autoPlaceholder: "aggressive"
         };
-        var input = document.querySelector('.form-login [type="tel"]');
-        var iti = window.intlTelInput(input, options);
-        iti.setCountry('ru')
-        $(input).mask('(999) 999-9999');
-        input.addEventListener("countrychange", function () {
-            var curFormat = $(this).attr('placeholder');
-            var doneFormat = curFormat.replace(/[0-9]/g, "9");
-            $(this).unmask();
-            $(this).mask(`${doneFormat}`);
-            $(this).focus();
+
+        var input = $('[type="tel"]');
+        input.each((i, el) => {
+            var iti = window.intlTelInput(el, options);
+            iti.setCountry('ru')
+            $(el).mask('9 (999) 999-9999');
+            console.log(el);
+            el.addEventListener("countrychange", () => {
+                var curFormat = $(el).attr('placeholder');
+                console.log(curFormat);
+                if (curFormat != undefined && curFormat != '') {
+                    var doneFormat = curFormat.replace(/[0-9]/g, "9");
+                    $(el).unmask();
+                    $(el).mask(`${doneFormat}`);
+                    $(el).focus();
+                }
+            });
         });
+
+
     };
     telInit();
     window.tel_init = telInit;
