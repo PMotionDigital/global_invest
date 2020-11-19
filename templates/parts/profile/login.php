@@ -28,6 +28,10 @@
                 </div>
 
                 <a class="text-link" href="<?php echo wp_lostpassword_url(); ?>">Забыли пароль?</a>
+                <div class="form-log">
+                    <input type="checkbox" checked="" id="log_id">
+                    <label for="log_id">Согласен с условиями обработки персональных данных</label>
+                </div>
 
                 <input class="submit_button button-login button type-1" type="submit" value="Войти">
             </form>
@@ -55,8 +59,9 @@
                         <button class="password-reg"></button>
                     </div>
                 </div>
-                <div class="form-row--checkbox">
-                    <input type="checkobox" name="accept">
+                <div class="form-log">
+                    <input type="checkbox" checked="" id="reg_id">
+                    <label for="reg_id">Согласен с условиями обработки персональных данных</label>
                 </div>
                 <input class="submit_button button type-1" type="submit" value="Регистрация">
             </form>
