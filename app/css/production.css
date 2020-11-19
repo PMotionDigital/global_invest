@@ -4734,6 +4734,11 @@ body.page-template-template-about .about, body.page-template-template-author .au
     display: inline-block;
     height: auto;
     width: 100%; }
+    .form-login .button.disabled {
+      pointer-events: none;
+      cursor: none;
+      background-color: gray;
+      box-shadow: none; }
 
 .static-form {
   padding-top: 5rem;

@@ -63,7 +63,7 @@
                     <input type="checkbox" checked="" id="reg_id">
                     <label for="reg_id">Согласен с условиями обработки персональных данных</label>
                 </div>
-                <input class="submit_button button type-1" type="submit" value="Регистрация">
+                <input class="submit-reg submit_button button type-1" type="submit" value="Регистрация">
             </form>
         </div>
     </div>

@@ -254,7 +254,7 @@ if (is_user_logged_in()) :
 									</div>
 								</div>
 								<div class="chart-tabs_content">
-									<div class="chart-wrap dis-flex flex-wrap-wrap" data-tab-content="1">
+									<div class="active chart-wrap dis-flex flex-wrap-wrap" data-tab-content="1">
 										<div class="chart-data-json">
 											<?php echo json_encode($chart_data); ?>
 										</div>
@@ -269,7 +269,7 @@ if (is_user_logged_in()) :
 										</div>
 									</div>
 
-									<div class="active chart-wrap dis-flex flex-wrap-wrap" data-tab-content="2">
+									<div class="chart-wrap dis-flex flex-wrap-wrap" data-tab-content="2">
 										<div class="chart-data-json2">
 											<?php echo json_encode($chart_data_income); ?>
 										</div>

@@ -83,7 +83,7 @@ jQuery(document).ready(($) => {
 					inputs.css('border', '2px solid red');
 					$('.form-message').html(response.message);
 					$('.form-message').css('color', 'red');
-					
+
 
 
 				}
@@ -135,16 +135,26 @@ jQuery(document).ready(($) => {
 		}
 		return false;
 	});
+	const checkBoxLog = document.getElementById("log_id");
 
-	function checkConfirm() {      
-		if($("#log_id").attr("checked") != 'checked') { 
-			window.alert('Дайте свое согласие на обработку данных!');
-			$("#log_id").css('border', '1px solid red');
-			return false;
+	checkBoxLog.addEventListener(`change`, () => {
+		const buttonlog = document.querySelector(".submit-log");
+		if (!checkBoxLog.checked) {
+			$(buttonlog).addClass('disabled');
+
+		} else {
+			$(buttonlog).removeClass('disabled');
 		}
-		return true;
-	}
+	})
+	const checkBoxReg = document.getElementById("reg_id");
+	checkBoxReg.addEventListener(`change`, () => {
+		const buttonreg = document.querySelector(".submit-reg");
+		if (!checkBoxReg.checked) {
+			$(buttonreg).addClass('disabled');
+		} else {
+			$(buttonreg).removeClass('disabled');
+		}
+	})
 
-	checkConfirm();
 
 });
