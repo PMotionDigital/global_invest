@@ -51,7 +51,11 @@
 
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
-    // .title-tooltip {
-    //     // font-size: 7px;
-    // }
+    .form-login--settings {
+        display: block;
+        .form-row {
+            width: 100%;
+        }
+        
+    }
 }
