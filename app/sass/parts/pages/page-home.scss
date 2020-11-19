@@ -604,6 +604,12 @@ select {
     right: -6.25%;
 }
 
+.time-wrapper__form {
+    .form-row{
+        align-items: center;
+    }
+}
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
     #changes .changes-top .changes-top__slides,
     #changes .changes-news__slides.main,

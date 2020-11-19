@@ -2464,7 +2464,7 @@ main.global-main {
   display: flex;
   -webkit-box-align: end;
   -ms-flex-align: end;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .form-row .form-group {
