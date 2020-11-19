@@ -136,4 +136,15 @@ jQuery(document).ready(($) => {
 		return false;
 	});
 
+	function checkConfirm() {      
+		if($("#log_id").attr("checked") != 'checked') { 
+			window.alert('Дайте свое согласие на обработку данных!');
+			$("#log_id").css('border', '1px solid red');
+			return false;
+		}
+		return true;
+	}
+
+	checkConfirm();
+
 });

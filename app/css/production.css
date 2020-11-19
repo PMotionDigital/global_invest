@@ -4722,7 +4722,7 @@ body.page-template-template-about .about, body.page-template-template-author .au
       .form-login .form-row input:focus {
         border-color: #000; }
   .form-login .form-log {
-    padding: 2rem 0; }
+    padding: 2rem 0 0; }
     .form-login .form-log label {
       font-size: 12px; }
   .form-login .button {

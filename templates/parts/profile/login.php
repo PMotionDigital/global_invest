@@ -33,7 +33,7 @@
                     <label for="log_id">Согласен с условиями обработки персональных данных</label>
                 </div>
 
-                <input class="submit_button button-login button type-1" type="submit" value="Войти">
+                <input class="submit-log submit_button button-login button type-1" type="submit" value="Войти">
             </form>
         </div>
         <div class="" data-content="register">
