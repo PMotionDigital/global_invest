@@ -46,6 +46,7 @@
     }
     input {
         font-size: 1rem;
+        -webkit-appearance: none;
     }
 }
 
@@ -55,7 +56,11 @@
         display: block;
         .form-row {
             width: 100%;
+            input {
+                -webkit-appearance: none;
+            }
         }
+        
         
     }
 }
