@@ -131,6 +131,7 @@
 
             .password-control--noview {
                 background: url(../images/eye-open.svg) 0 0 no-repeat;
+                background-position: 50%;
             }
 
             .password-reg {
@@ -143,8 +144,10 @@
                 background: url(../images/eye-closed.svg) 0 0 no-repeat;
                 background-position: 50%;
             }
+
             .password-reg--noview {
                 background: url(../images/eye-open.svg) 0 0 no-repeat;
+                background-position: 50%;
             }
         }
 
@@ -174,6 +177,7 @@
 
     .form-log {
         padding: 2rem 0 0;
+
         label {
             font-size: 12px;
         }
@@ -188,6 +192,7 @@
         display: inline-block;
         height: auto;
         width: 100%;
+
         &.disabled {
             pointer-events: none;
             cursor: none;
@@ -271,6 +276,7 @@
         width: 100%;
         background-color: $red;
         color: $white;
+
         &.disabled {
             pointer-events: none;
             cursor: none;
