@@ -552,6 +552,12 @@
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.profile_products {
+		.product-row {
+			&>*:nth-child(4) {
+				width: 50%;
+				padding-right: 0;
+			}
+		}
 		.product-row_item {
 			.section-title {
 				display: none;
