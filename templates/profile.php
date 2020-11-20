@@ -129,14 +129,15 @@ if (is_user_logged_in()) :
 														$money_parts[$post_type]['income'] += $price_income;
 													} else {
 														$money_parts[$post_type] = array();
-														$money_parts[$post_type]['invest'] = intval($sum);
-														$money_parts[$post_type]['income'] = intval($price_income);
+														$money_parts[$post_type]['invest'] = $sum;
+														$money_parts[$post_type]['income'] = $price_income;
 													};
 													//echo $post_type.': '.$price_income.'<br><br>';
 													$all_money += get_sub_field('summa_investiczij');
 												endif;
 											endif;
 										endwhile;
+									
 										$free_money = ($money_payments - $all_money); ?>
 										<script>
 											window.localStorage.setItem('free_money', '<?php echo $free_money; ?>');
@@ -174,7 +175,7 @@ if (is_user_logged_in()) :
 										<div class="section-title type-3">
 											<p>задействованные средства:</p>
 										</div>
-										<div class="money"><?php echo number_format($all_money, 2, ',', ' ') . ' $'; ?></div>
+										<div class="money"><?php echo number_format($all_money + abs($money_income), 2, ',', ' ') . ' $'; ?></div>
 									</div>
 									<div class="user-money_item">
 										<div class="section-title type-3">

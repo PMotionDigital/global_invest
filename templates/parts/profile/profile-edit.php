@@ -7,15 +7,17 @@ $user = wp_get_current_user();  ?>
         </div>
         
         <form class="form-login form-login--settings profile-form--edit" id="data-fields_form" action="update_user_profile" method="post" enctype="multipart/form-data">
-            <div class="form-message"></div>    
-            <div class="form-row">
-                <label for="">Email</label>
-                <input value="<?php the_author_meta('user_email', $user->ID); ?>" type="text" class="email" name="new_user_email">
-            </div>
-            <div class="form-row">
-                <label for="">Телефон</label>
-                <input type="tel" value="<?php echo get_field('nomer_telefona', 'user_' . $user->ID); ?>" data-required="" name="new_user_phone" class="required" autocomplete="off" data-intl-tel-input-id="2" placeholder="8 (912) 345-67-89">
-            </div>
+            <div class="form-message"></div>
+            <div class="items">  
+                <div class="form-row">
+                    <label for="">Email</label>
+                    <input value="<?php the_author_meta('user_email', $user->ID); ?>" type="text" class="email" name="new_user_email">
+                </div>
+                <div class="form-row">
+                    <label for="">Телефон</label>
+                    <input type="tel" value="<?php echo get_field('nomer_telefona', 'user_' . $user->ID); ?>" data-required="" name="new_user_phone" class="required" autocomplete="off" data-intl-tel-input-id="2" placeholder="8 (912) 345-67-89">
+                </div>
+            </div>  
             <div class="form-row form-row--password">
                 <label for="">Пароль</label>
                 <div class="password-edit">
