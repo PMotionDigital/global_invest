@@ -37,9 +37,12 @@ $user = wp_get_current_user();  ?>
 								echo '<span class="section-title type-3"><span>Тип операции: </span></span>';
 							};
 							$type_data = $row['tip_operaczii'];
-							echo $type_data['label'];
+							
 							if ($row['product']) :
-								echo '<br><span class="product-name" style="display: inline-block; opacity: .8; padding-top: .3rem;">' . get_the_title($row['product']) . '</span>';
+								//echo '<br><span class="product-name" style="display: inline-block; opacity: .8; padding-top: .3rem;">' . get_the_title($row['product']) . '</span>';
+								echo 'Продажа '.get_the_title($row['product']);
+							else:
+								echo $type_data['label'];
 							endif; ?>
 						</div>
 						<div class="profile-history_row-item">
@@ -58,7 +61,9 @@ $user = wp_get_current_user();  ?>
 							};
 							$payment_data = $row['dannye'];
 							if ($type_data['value'] == 'buy') {
-								echo 'Продукт';
+								$post_type = get_post($row['product'])->post_type;
+								$type_label = get_post_type_object( $post_type )->label;
+								echo $type_label;
 							} else {
 								echo $payment_data['label'];
 							}

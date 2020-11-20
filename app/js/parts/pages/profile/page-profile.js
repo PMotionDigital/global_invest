@@ -1,14 +1,14 @@
 jQuery(document).ready(($) => {
     const myChart = {};
-    setChart('.chart-wrap .chart-data-json', 'chart', 'chart-legend', ' %');
-    setChart('.chart-wrap .chart-data-json2', 'chart2', 'chart-legend2', ' %');
+    setChart('.chart-wrap .chart-data-json', 'chart', 'chart-legend', ' %', '');
+    setChart('.chart-wrap .chart-data-json2', 'chart2', 'chart-legend2', ' %', '+');
 
-    function setChart(jsonEl, canvasID, legendId, sym) {
+    function setChart(jsonEl, canvasID, legendId, sym, preffix) {
         if ($(jsonEl).length) {
             let dataJson = $(jsonEl).html().trim();
             let dataObj = JSON.parse(dataJson);
             const chartWrap = $(jsonEl).closest('.chart-wrap');
-
+            console.log(dataObj);
             $(jsonEl).remove();
 
             const labels = [];
@@ -69,7 +69,7 @@ jQuery(document).ready(($) => {
                                 const value = target.data('value');
                                 const tipIndex = target.data('tip-index');
                                 target.addClass('active').siblings().removeClass('active');
-                                chartWrap.find('.chart-value-display .val').text(numberWithCommas(value) + sym);
+                                chartWrap.find('.chart-value-display .val').text(preffix + numberWithCommas(value) + sym);
                             }, 300);
 
 
@@ -83,7 +83,7 @@ jQuery(document).ready(($) => {
                                 const value = $(`#${legendId} .chart-legend_item[data-tip-index="${index}"]`).data('value');
 
                                 $(`#${legendId} .chart-legend_item[data-tip-index="${index}"]`).addClass('active').siblings().removeClass('active');
-                                chartWrap.find('.chart-value-display .val').text(numberWithCommas(value) + sym);
+                                chartWrap.find('.chart-value-display .val').text(preffix + numberWithCommas(value) + sym);
                             }
                         }
                     }
@@ -98,7 +98,7 @@ jQuery(document).ready(($) => {
 
                     openTip(myChart[canvasID], tipIndex);
                     $(e.currentTarget).addClass('active').siblings().removeClass('active');
-                    chartWrap.find('.chart-value-display .val').text(numberWithCommas(value) + sym);
+                    chartWrap.find('.chart-value-display .val').text(preffix + numberWithCommas(value) + sym);
                 });
 
                 $(document).on('mouseleave', `#${legendId} .chart-legend_item`, (e) => {
