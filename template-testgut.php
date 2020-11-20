@@ -22,8 +22,13 @@ $mainWrapper = 'col-lg-8 col-md-10 col-lm-11 col-xs-11';
 		</div>
 	</div>
 </section>
-<section class="page-content"> 
-	<?php the_content(); ?>
+<section class="what dis-flex justify-content-center"> 
+	<div class="col-lg-11 dis-flex justify-content-center">
+		<div class="col-lg-8 col-md-10 col-lm-11 col-xs-11">
+			<?php the_content(); ?>
+		</div>
+	</div>
+	
 </section>
 <?php get_template_part('partials/content', 'time'); ?>
 

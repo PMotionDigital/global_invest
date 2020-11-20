@@ -206,21 +206,21 @@ if (is_user_logged_in()) :
 											if ($money_income != 0) {
 												$chart_data_income['labels'][] = array(
 													'name' => $name,
-													'value' => $part['income'] / $money_income * 100,
+													'value' => floatval(abs($money_income) / $money_payments * 100) * ($part['income'] / $money_income * 100) / 100,
 													'color' => $colors[$c_count]
 												);
 											}
 											if ($money_payments != 0) {
 												$chart_data['labels'][] = array(
 													'name' => $name,
-													'value' => $part['invest'] / $money_payments * 100,
+													'value' => ($part['invest'] / $money_payments * 100),
 													'color' => $colors[$c_count]
 												);
 											}
 											$c_count++;
 										endforeach;
 										$chart_data['all'] = intval($money_payments);
-										$chart_data_income['all'] = floatval($money_income);
+										$chart_data_income['all'] = floatval(abs($money_income) / $money_payments * 100);
 
 										if ($money_payments != 0) {
 											$chart_data['labels'][] = array(
