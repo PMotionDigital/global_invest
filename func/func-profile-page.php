@@ -81,9 +81,16 @@ function profile_offers() {
 										<span>Минимальный срок:</span>
 									</div>
 								<?php endif; ?>
+								<?php the_field('minimalnyj_srok'); ?>
 							</div>
 							<div class="profile-offers_item-buy button-modal" 
-							data-min="<?php echo $min; ?>"
+							data-min="<?php 
+							$min_field = get_field('minimalnaya_summa');
+							if($min_field):
+								echo $min_field;
+							else:
+								echo $min; 
+							endif;  ?>"
 							data-modal="buy-case">Инвестировать</div>
 						</div>
 			<?php endforeach; wp_reset_postdata(); ?>

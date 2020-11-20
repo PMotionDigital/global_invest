@@ -3712,9 +3712,8 @@ html {
   visibility: hidden;
   left: 2rem;
   bottom: 2rem;
-  width: 45%;
   background-color: #e10404;
-  padding: 3rem;
+  padding: 4rem;
   color: #fff;
   z-index: 999;
   font-size: 1rem;
@@ -3733,7 +3732,7 @@ html {
     #note_form .note_form-content > div:first-child a {
       display: block;
       font-size: 1.5rem;
-      margin-top: 1rem; }
+      margin-top: 1.7rem; }
     #note_form .note_form-content .footer-socials {
       margin-top: 1rem; }
       #note_form .note_form-content .footer-socials nav.socials ul a {

@@ -81,9 +81,9 @@ html {
     visibility: hidden;
     left: 2rem;
     bottom: 2rem;
-    width: 45%;
+
     background-color: $red;
-    padding: 3rem;
+    padding: 4rem;
     color: $white;
     z-index: 999;
     font-size: 1rem;
@@ -106,7 +106,7 @@ html {
         &>div:first-child a {
             display: block;
             font-size: 1.5rem;
-            margin-top: 1rem;
+            margin-top: 1.7rem;
         }
 
         .footer-socials {
