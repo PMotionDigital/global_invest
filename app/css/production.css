@@ -5515,14 +5515,12 @@ p {
     -webkit-appearance: none; }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
-  .form-login--settings {
+  .form-login .items {
     display: block; }
-    .form-login--settings .items {
-      display: block; }
-      .form-login--settings .items .form-row {
-        width: 100%; }
-        .form-login--settings .items .form-row input {
-          -webkit-appearance: none; } }
+    .form-login .items .form-row {
+      width: 100%; }
+      .form-login .items .form-row input {
+        -webkit-appearance: none; } }
 
 .profile-form {
   padding-top: 2rem;
