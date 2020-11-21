@@ -5517,10 +5517,12 @@ p {
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .form-login--settings {
     display: block; }
-    .form-login--settings .form-row {
-      width: 100%; }
-      .form-login--settings .form-row input {
-        -webkit-appearance: none; } }
+    .form-login--settings .items {
+      display: block; }
+      .form-login--settings .items .form-row {
+        width: 100%; }
+        .form-login--settings .items .form-row input {
+          -webkit-appearance: none; } }
 
 .profile-form {
   padding-top: 2rem;

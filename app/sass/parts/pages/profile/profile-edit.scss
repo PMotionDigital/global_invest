@@ -62,12 +62,16 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .form-login--settings {
         display: block;
-        .form-row {
-            width: 100%;
-            input {
-                -webkit-appearance: none;
+        .items {
+            display: block;
+            .form-row {
+                width: 100%;
+                input {
+                    -webkit-appearance: none;
+                }
             }
         }
+        
         
         
     }
