@@ -227,6 +227,8 @@ include 'func/func-profile-page.php';
 include 'func/func-upload.php';
 include 'func/func-profile-payments.php';
 include 'func/func-profile-edit.php';
+//register blocks
+include 'func/register-blocks.php';
 
 // автообновление версии файлов
 

@@ -3,25 +3,54 @@
 .single-content_left.actual-items {
     display: block;
     padding-top: 2rem;
+
     .actual-item {
         width: 100%;
         height: auto;
         margin-bottom: 2rem;
-        
+
+        h3 {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        &--without-padding {
+            padding-bottom: 20px;
+        }
+
+        ul {
+            font-size: 12px;
+            color: #a0a4ae;
+            line-height: 15px;
+
+
+            li {
+                margin-top: 20px;
+
+                strong {
+                    font-size: 12px;
+                    color: black;
+                }
+            }
+        }
+
         .actual-item__list {
             li {
                 display: flex;
                 align-items: baseline;
+
                 p {
                     margin-bottom: 0;
                     font-size: 12px;
                     color: #a0a4ae;
                 }
+
                 strong {
                     font-size: 12px;
                 }
             }
         }
+
         .actual-item__name {
             line-height: 2rem;
         }
@@ -31,22 +60,55 @@
 
 .single-content_right {
     padding-left: 2rem;
+    padding-top: 2rem;
+
+    .tradingview-widget-container {
+        padding-bottom: 4rem;
+    }
+
+    .graphik-content--comment {
+        .comment-block {
+            display: grid;
+            line-height: 2.6;
+
+            &:not(.active) {
+                display: none;
+            }
+
+            span {
+                color: $grey;
+                font-size: 12px;
+
+                strong {
+                    color: $black;
+                    padding: 0 0 0 1rem;
+                }
+
+            }
+
+        }
+    }
+
     p {
         padding: 2rem 0 0;
     }
+
     .text-item {
         &--key {
             padding-top: 3rem;
         }
+
         .text-item_block {
             line-height: 1.6;
             padding-top: 2rem;
+
             .block-item_two {
                 margin-left: 3rem;
             }
         }
     }
 }
+
 .news-items {
     margin-top: 2rem;
 }
@@ -55,7 +117,19 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .single-content_right {
         padding-left: 0rem;
-    }  
+
+        .graphik-content {
+            display: block;
+
+            .tradingview-widget-container {
+                padding-bottom: 0;
+            }
+
+            .graphik-content--comment {
+                padding: 1rem 0;
+            }
+        }
+    }
 
 }
 
@@ -63,7 +137,8 @@
     .single-content_left.actual-items {
         display: grid;
     }
+
     .single-content_right {
         padding-left: 0rem;
-    }  
+    }
 }

@@ -137,7 +137,7 @@ if (is_user_logged_in()) :
 												endif;
 											endif;
 										endwhile;
-									
+
 										$free_money = ($money_payments - $all_money); ?>
 										<script>
 											window.localStorage.setItem('free_money', '<?php echo $free_money; ?>');
@@ -285,7 +285,7 @@ if (is_user_logged_in()) :
 											<span class="val"></span>
 										</div>
 									</div>
-									
+
 								</div>
 							</div>
 
@@ -320,7 +320,9 @@ if (is_user_logged_in()) :
 								$product = get_sub_field('produkt');
 								$sum = get_sub_field('summa_investiczij');
 								if ($product && $sum && $status !== 'success') : ?>
-									<div class="product-row <?php if ($status !== 'true') { echo 'inactive'; }; ?>">
+									<div class="product-row <?php if ($status !== 'true') {
+																echo 'inactive';
+															}; ?>">
 										<?php
 
 
@@ -342,36 +344,36 @@ if (is_user_logged_in()) :
 										<?php
 										if ($status == 'true') :
 
-												if ($waiting == 'true') : ?>
+											if ($waiting == 'true') : ?>
 												<div class="product-row_item">Ожидает публикации</div>
 												<div class="product-row_item">Дата публикации <?php the_field('data_publikaczii', $product->ID); ?></div> <?php
-												else :
-													$price_change = get_field('dohod_v', $product->ID);
-													$pc = $price_change;
-													$cp = get_field('czena_v', $product->ID);
-													$sp = get_sub_field('czena_pri_pokupke');
-													if ($cp && $sp) {
-														$price_change = ($cp - $sp) / $sp * 100;
-														$pc = $price_change;
-													}
-													$price_income = $sum * $price_change * 0.01;
+																																						else :
+																																							$price_change = get_field('dohod_v', $product->ID);
+																																							$pc = $price_change;
+																																							$cp = get_field('czena_v', $product->ID);
+																																							$sp = get_sub_field('czena_pri_pokupke');
+																																							if ($cp && $sp) {
+																																								$price_change = ($cp - $sp) / $sp * 100;
+																																								$pc = $price_change;
+																																							}
+																																							$price_income = $sum * $price_change * 0.01;
 
 
-													$className = '';
-													if ($price_income > 0) {
-														$price_income = '+' . number_format($price_income, 2, ',', ' ') . ' $';
-														$price_change = '+' . number_format($price_change, 2, ',', ' ') . ' %';
-														$className = 'positive';
-													} else {
-														$price_income = number_format($price_income, 2, ',', ' ') . ' $';
-														$price_change = number_format($price_change, 2, ',', ' ') . ' %';
-													};
-													if ($price_income < 0) {
-														$className = 'negative';
-													}
+																																							$className = '';
+																																							if ($price_income > 0) {
+																																								$price_income = '+' . number_format($price_income, 2, ',', ' ') . ' $';
+																																								$price_change = '+' . number_format($price_change, 2, ',', ' ') . ' %';
+																																								$className = 'positive';
+																																							} else {
+																																								$price_income = number_format($price_income, 2, ',', ' ') . ' $';
+																																								$price_change = number_format($price_change, 2, ',', ' ') . ' %';
+																																							};
+																																							if ($price_income < 0) {
+																																								$className = 'negative';
+																																							}
 
 
-													?>
+																																							?>
 
 												<?php if (wp_is_mobile()) : ?>
 													<div class="product-row_item <?php echo $className; ?>">
@@ -395,13 +397,13 @@ if (is_user_logged_in()) :
 												<?php endif; ?>
 												<div class="button-modal" data-inc="<?php echo $sum + $sum * $pc * 0.01; ?>" data-index="<?php echo get_row_index(); ?>" data-product="<?php echo $product->ID; ?>" data-modal="realize">Реализовать</div>
 										<?php endif;
-										elseif ($status == 'false') :
-											echo '<span class="unactive">Не подтверждено</span>';
-										elseif ($status == 'wait') :
-											echo '<span class="unactive">Ожидание реализации</span>';
-										elseif ($status == 'success') :
-											echo '<span class="dis-none">Реализовано</span>';
-										endif; ?>
+																																					elseif ($status == 'false') :
+																																						echo '<span class="unactive">Не подтверждено</span>';
+																																					elseif ($status == 'wait') :
+																																						echo '<span class="unactive">Ожидание реализации</span>';
+																																					elseif ($status == 'success') :
+																																						echo '<span class="dis-none">Реализовано</span>';
+																																					endif; ?>
 									</div>
 							<?php
 								endif;
@@ -419,8 +421,16 @@ if (is_user_logged_in()) :
 
 // auth form
 else : ?>
-	<section class="static-form">
-		<?php get_template_part('templates/parts/profile/login'); ?>
-	</section> <?php
-			endif;
-			get_footer(); ?>
+
+	<div class="dis-flex justify-content-center">
+		<section class="static-form col-lg-12 col-xs-11">
+			<?php get_template_part('templates/parts/profile/login'); ?>
+		</section>
+	</div>
+<?php
+endif;
+get_footer(); ?>
+
+<!-- Start of  Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=06699d80-5057-46cb-ab3e-cbc7801def2a"> </script>
+<!-- End of  Zendesk Widget script -->

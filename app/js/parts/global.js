@@ -36,7 +36,7 @@ jQuery(document).ready(function ($) {
         $('#cookie-message').removeClass('show');
     });
 
-    console.log(localStorage.getItem('cookie-message'));
+    //.log(localStorage.getItem('cookie-message'));
 
     // parallax
 
@@ -151,10 +151,10 @@ jQuery(document).ready(function ($) {
             var iti = window.intlTelInput(el, options);
             iti.setCountry('ru')
             $(el).mask('9 (999) 999-9999');
-            console.log(el);
+            //console.log(el);
             el.addEventListener("countrychange", () => {
                 var curFormat = $(el).attr('placeholder');
-                console.log(curFormat);
+                //console.log(curFormat);
                 if (curFormat != undefined && curFormat != '') {
                     var doneFormat = curFormat.replace(/[0-9]/g, "9");
                     $(el).unmask();
