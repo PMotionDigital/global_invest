@@ -4,7 +4,7 @@ get_header();
 $mainWrapper = 'col-lg-8 col-md-10 col-lm-11 col-xs-11';
 ?>
 
-<section class="author">
+<section class="author" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
 	<div class="dis-flex justify-content-center">
 		<div class="col-lg-11 dis-flex justify-content-center">
 			<div class="<?php echo $mainWrapper; ?>">
@@ -19,7 +19,7 @@ $mainWrapper = 'col-lg-8 col-md-10 col-lm-11 col-xs-11';
 		</div>
 </section>
 
-<section class="actual dis-flex justify-content-center">
+<!-- <section class="actual dis-flex justify-content-center">
 	<div class="col-lg-11 dis-flex justify-content-center">
 		<div class="<?php echo $mainWrapper; ?>">
 			<div class="title">
@@ -27,14 +27,14 @@ $mainWrapper = 'col-lg-8 col-md-10 col-lm-11 col-xs-11';
 			</div>
 			<div class="actual-items">
 			<?php
-				$posts = get_posts(array(
-					'posts_per_page'	=> -1,
-					'post_type'			=> 'autor_strategy'
-				));
+			$posts = get_posts(array(
+				'posts_per_page'	=> -1,
+				'post_type'			=> 'autor_strategy'
+			));
 
-				if ($posts) : foreach ($posts as $post) :
-						setup_postdata($post);
-				?>
+			if ($posts) : foreach ($posts as $post) :
+					setup_postdata($post);
+			?>
 						<div class="actual-item" data-post-id="<?php echo $post->ID; ?>">
 							<div class="actual-item__icon">
 							<img src="<?php echo get_field('logotip_kompanii'); ?>" alt="<?php the_title(); ?>">
@@ -53,13 +53,13 @@ $mainWrapper = 'col-lg-8 col-md-10 col-lm-11 col-xs-11';
 									</li>
 								</ul>
 							</div>
-							<?php 
-							if(current_user_can('subscriber')): ?>
+							<?php
+							if (current_user_can('subscriber')) : ?>
 								<div class="actual-item__link profile-offers_item-buy">
 									<a href="#" class="button-modal" 
 									data-min="30000" data-modal="buy-case">инвестировать</a>
 								</div>
-								<?php else: ?>
+								<?php else : ?>
 								<div class="actual-item__link">
 									<a href="#" class="button-modal" data-modal="login">инвестировать</a>
 								</div>
@@ -71,7 +71,7 @@ $mainWrapper = 'col-lg-8 col-md-10 col-lm-11 col-xs-11';
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <!-- start content gutenberg -->
 <section class="page-content page-content-gutenberg dis-flex justify-content-center">
