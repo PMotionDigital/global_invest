@@ -309,6 +309,7 @@ figure.object-fit-cover {
 
         .wp-block-columns {
             padding: 0;
+
             .evaluation-item__number {
                 font-size: 25px;
                 padding: 0;
@@ -354,28 +355,39 @@ figure.object-fit-cover {
         .wp-block-cover {
             left: -10%;
         }
+
         .wp-block-columns {
             margin-bottom: 0;
+
             .evaluation-item--block {
                 padding: 1rem 0;
             }
-            
+
         }
+
         .object-fit-cover {
             position: static;
             padding: 0 0 2rem;
-                img {
-                    position: static;
-                } 
-        }  
-        
+
+            img {
+                position: static;
+            }
+        }
+
         .image-block {
             padding: 1rem 0;
         }
+
         .wp-block--second {
             margin: 1rem 0;
         }
 
+        
+
+    }
+    .chartjs-tooltip {
+        padding: 0 !important;
+        transform: translate(-50%, -192%) !important;
     }
 }
 
@@ -393,6 +405,7 @@ figure.object-fit-cover {
     transform: translate(-50%, -170%);
     padding: 0.5rem;
     z-index: 99999999;
+
     &::before,
     &::after {
         position: absolute;
@@ -409,7 +422,7 @@ figure.object-fit-cover {
         z-index: -1;
     }
 
-    &::after{
+    &::after {
         top: 105%;
         border: 1.3rem solid $black;
         border-bottom-width: 0;
@@ -419,7 +432,7 @@ figure.object-fit-cover {
         border-right-color: transparent;
         transform: translate(-50%, 0);
         z-index: -2;
-        
+
     }
 }
 

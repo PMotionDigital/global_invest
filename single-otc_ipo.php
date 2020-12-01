@@ -77,7 +77,7 @@ global $post;
                                                                         $newNum = number_format($newNum, 2, ',', ' ');
                                                                         echo $newNum . ' ' . $sym;
                                                                         ?></strong></span>
-                                        <span>Цена за акцию: <strong><?php the_sub_field('cena_za_akciyu'); ?></strong></span>
+                                        <span>Цена за акцию: <strong><?php the_sub_field('czena_za_akcziyu'); ?></strong></span>
                                         <span>Дата: <strong><?php the_sub_field('data'); ?></strong></span>
                                     </div>
                             <?php

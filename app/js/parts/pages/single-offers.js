@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
     if ($('body').hasClass('single-otc_ipo')) {
 
-        const jsonUrl = 'http://dev.global.ru/wp-json/acf/v3/otc_ipo';
+        const jsonUrl = `${window.location.origin}/wp-json/acf/v3/otc_ipo`;
         const section = document.querySelector('[data-post-id]');
         const postId = section.dataset.postId;
         const labels = [];
@@ -71,7 +71,7 @@ jQuery(document).ready(function ($) {
                         }
                     }],
                     yAxes: [{
-                        
+
                         gridLines: {
                             color: "#D3D3D3",
                         },
@@ -138,7 +138,7 @@ jQuery(document).ready(function ($) {
                             });
                             tooltips.push({
                                 raund: val.raund,
-                                price: val.cena_za_akciyu
+                                price: val.czena_za_akcziyu
                             });
                             labels.push(val.data);
                             console.log(response);
